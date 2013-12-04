@@ -112,3 +112,13 @@ inject_into_file 'app/assets/javascripts/application.js', after: "//= require_tr
 //= require bootstrap/popover
 CODE
 end
+
+# 日本語対応
+gsub_file 'config/application.rb', '# config.i18n.default_locale = :de', 'config.i18n.default_locale = :ja'
+
+gem 'i18n_generators'
+
+# アプリケーションセットアップ
+#generate(:scaffold, "account", "bs_pl_division:string", "debit_credit_division:string", "code:string","name:string","parent_code:string")
+
+

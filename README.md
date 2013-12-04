@@ -83,7 +83,45 @@
 
 #### 財務/勘定一体型 ####
 
+##### アプリケーションモックアップ #####
+
     $ rails new chap2-2-1 -m ./app_template.rb
+    $ cd chap2-2-1
+    $ rails g i18n ja    
+    $ rails g scaffold account bs_pl_division:string debit_credit_division:string code:string name:string parent_code:string
+    $ rake db:migrate 
+
++ 日本語表示対応
+
+    + [モデルの日本語化](config/locales/model_ja.yml)
+    + [ビューの日本語化1](config/locales/view_ja.yml)
+    + [ビューの日本語化2](app/views/accounts/index.html.erb)
+    + [ビューの日本語化3](app/views/accounts/show.html.erb)
+    + [ビューの日本語化4](app/views/accounts/edit.html.erb)
+    + [ビューの日本語化5](app/views/accounts/new.html.erb)
+
++ [シードファイルの作成](db/seeds.rb)
+
+        $ rake db:seed
+
+
+##### Cucumberで始める #####
+
+1. １つのシナリオに焦点をあわせる
+
+1. 失敗するステップ定義を書く
+
+##### RSpecサンプルに進む #####
+
+1. 失敗するサンプルを書く
+
+1. サンプルを成功させる
+
+1. リファクタリング
+
+##### ステップが成功したら #####
+
+1. リファクタリング
 
 #### 財務/勘定分離型 ####
 

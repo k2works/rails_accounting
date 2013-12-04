@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('activerecord.attributes.account.bs_pl_division') %>:</b>
+  <%= @account.bs_pl_division %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.account.debit_credit_division') %>:</b>
+  <%= @account.debit_credit_division %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.account.code') %>:</b>
+  <%= @account.code %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.account.name') %>:</b>
+  <%= @account.name %>
+</p>
+
+<p>
+  <b><%= t('activerecord.attributes.account.parent_code') %>:</b>
+  <%= @account.parent_code %>
+</p>
+
+
+<%= link_to t('.edit'), edit_account_path(@account) %> |
+<%= link_to t('.back'), accounts_path %>

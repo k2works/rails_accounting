@@ -1,0 +1,23 @@
+ja:
+  accounts:
+    form:
+      title:    "勘定科目"
+      error:    "件のエラーがあります"
+    index:
+      title:    "勘定科目"
+      show:     "表示"
+      edit:     "編集"
+      destroy:  "削除"
+      ok:      "本当によろしいですか？"
+      new:     "新規"
+    edit:
+      title:    "編集"
+      show:     "表示"
+      back:     "戻る"
+    new:
+      title:    "新規"
+      back:     "戻る"
+    show:
+      edit:     "編集"      
+      back:     "戻る"
+                            

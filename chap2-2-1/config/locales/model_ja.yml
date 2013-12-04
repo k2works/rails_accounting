@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      account:
+        bs_pl_division: "BS/PL"
+        debit_credit_division:  "借方/貸方"
+        code:  "勘定科目コード"        
+        name: "勘定科目名"
+        parent_code: "親勘定科目コード"

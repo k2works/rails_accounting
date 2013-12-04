@@ -1,0 +1,36 @@
+<h1><%= t('.title') %></h1>
+
+<table>
+  <tr>
+    <th><%= t('activerecord.attributes.account.bs_pl_division') %></th>
+    <th><%= t('activerecord.attributes.account.debit_credit_division') %></th>
+    <th><%= t('activerecord.attributes.account.code') %></th>
+    <th><%= t('activerecord.attributes.account.name') %></th>
+    <th><%= t('activerecord.attributes.account.parent_code') %></th>
+    <th><%= t('activerecord.attributes.account.name') %></th>    
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @accounts.each do |account| %>
+  <tr>
+    <td><%= account.bs_pl_division %></td>
+    <td><%= account.debit_credit_division %></td>
+    <td><%= account.code %></td>
+    <td><%= account.name %></td>
+    <td><%= account.parent_code %></td>
+    <% if Account.find_by_code(account.parent_code).nil? %>
+      <td></td>
+    <% else %>
+      <td><%= Account.find_by_code(account.parent_code).name %></td>          
+    <% end %>
+    <td><%= link_to t('.show'), account %></td>
+    <td><%= link_to t('.edit'), edit_account_path(account) %></td>
+    <td><%= link_to t('.destroy'), account, method: :delete, data: { confirm: t('.ok') } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('.new'), new_account_path %>

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.16'
 gem 'sqlite3'
+gem 'i18n_generators'
 
 gem "rspec-rails",'~>2.0'
 gem "factory_girl_rails"

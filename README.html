@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+
+</head>
+
+<body>
+
+<h1>財務会計モデルをRailsで実装</h1>
+
+<h1>目的</h1>
+
+<p>財務会計システムをRailsで実装する</p>
+
+<h1>前提</h1>
+
+<p>| ソフトウェア   | バージョン   | 備考        |
+|:---------------|:-------------|:------------|
+| OS X           |10.8.5        |             |
+| ruby           |1.9.3-p392    |             |
+| rails          |3.2.13        |             |
+| bootstrap      |3.0.2         |             |
+| rspec          |2.0           |             |
+| cucmber        |1.3.1         |             |</p>
+
+<h1>構成</h1>
+
+<ul>
+<li><p><a href="#chap1">設計</a></p>
+
+<ul>
+<li><a href="#chap1-1">財務会計とは</a></li>
+<li><a href="#chap1-2">財務会計の業務プロセス</a></li>
+<li><a href="#chap1-3">財務会計のデータ構造</a>  </li>
+<li><a href="#chap1-4">財務諸表と勘定科目のデータ設計アプローチ</a></li>
+</ul></li>
+<li><p><a href="#chap2">実装</a></p>
+
+<ul>
+<li><a href="#chap2-1">セットアップ</a></li>
+<li><a href="#chap2-2">勘定科目</a>
+<ul>
+<li>財務/勘定一体型</li>
+<li>財務/勘定分離型</li>
+<li>チルダ連結型</li>
+</ul></li>
+<li><a href="#chap2-3">仕分</a>
+<ul>
+<li>２階層</li>
+<li>３階層</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1>詳細</h1>
+
+<h2><a name="chap1">設計</h2>
+
+<h3><a name="chap1-1">財務会計とは</h3>
+
+<ul>
+<li><p>利害関係者にお金を幾ら持っていて幾ら使って幾ら稼いだかを知ってもらうための記録・計算・管理プロセス</p>
+
+<ul>
+<li>利害関係者（お金を貸したり借りたり取り立てたりする人）
+<ul>
+<li>株主・債権者・徴税当局</li>
+</ul></li>
+<li>財政状態を記録・計算・管理する（全財産は幾ら？）
+<ul>
+<li>貸借対照表（B/S Balance Sheet）</li>
+</ul></li>
+<li>経営成績を記録・計算・管理する（幾ら使って幾ら稼いだ？）
+<ul>
+<li>損益計算書（P/L Profit and Loss Statement)</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3><a name="chap1-2">財務会計の業務プロセス</h3>
+
+<p><img src="img/002.png" alt="002" title="" /></p>
+
+<h3><a name="chap1-3">財務会計のデータ構造</h3>
+
+<p><img src="img/003.png" alt="003" title="" /></p>
+
+<h3><a name="chap1-4">財務諸表と勘定科目のデータ設計アプローチ</h3>
+
+<h4>勘定科目</h4>
+
+<p><img src="img/004.png" alt="004" title="" /></p>
+
+<p><img src="img/005.png" alt="005" title="" /></p>
+
+<p><img src="img/006.png" alt="006" title="" /></p>
+
+<h4>仕分</h4>
+
+<p><img src="img/007.png" alt="007" title="" /></p>
+
+<p><img src="img/008.png" alt="008" title="" /></p>
+
+<h2><a name="chap2">実装</h2>
+
+<h3><a name="chap2-1">セットアップ</h3>
+
+<pre><code>$ rvm use ruby-1.9.3-p392
+$ rvm gemset create rails_accounting
+$ rvm use ruby-1.9.3-p392@rails_accounting
+$ bundle
+</code></pre>
+
+<h3><a name="chap2-2">勘定科目</h3>
+
+<h4>財務/勘定一体型</h4>
+
+<h5>アプリケーションモックアップ</h5>
+
+<pre><code>$ rails new chap2-2-1 -m ./app_template.rb
+$ cd chap2-2-1
+$ rails g i18n ja    
+$ rails g scaffold account bs_pl_division:string debit_credit_division:string code:string name:string parent_code:string
+$ rake db:migrate
+</code></pre>
+
+<ul>
+<li><p>日本語表示対応</p>
+
+<ul>
+<li><a href="config/locales/model_ja.yml">モデルの日本語化</a></li>
+<li><a href="config/locales/view_ja.yml">ビューの日本語化1</a></li>
+<li><a href="app/views/accounts/index.html.erb">ビューの日本語化2</a></li>
+<li><a href="app/views/accounts/show.html.erb">ビューの日本語化3</a></li>
+<li><a href="app/views/accounts/edit.html.erb">ビューの日本語化4</a></li>
+<li><a href="app/views/accounts/new.html.erb">ビューの日本語化5</a></li>
+</ul></li>
+</ul>
+
+<h5>Cucumberで始める</h5>
+
+<ol>
+<li><p>１つのシナリオに焦点をあわせる</p></li>
+<li><p>失敗するステップ定義を書く</p></li>
+</ol>
+
+<h5>RSpecサンプルに進む</h5>
+
+<ol>
+<li><p>失敗するサンプルを書く</p></li>
+<li><p>サンプルを成功させる</p></li>
+<li><p>リファクタリング</p></li>
+</ol>
+
+<h5>ステップが成功したら</h5>
+
+<ol>
+<li>リファクタリング</li>
+</ol>
+
+<h4>財務/勘定分離型</h4>
+
+<pre><code>$ rails new chap2-2-2 -m ./app_template.rb
+</code></pre>
+
+<h4>チルダ連結型</h4>
+
+<pre><code>$ rails new chap2-2-3 -m ./app_template.rb
+</code></pre>
+
+<h3><a name="chap2-3">仕分</h3>
+
+<h4>２階層</h4>
+
+<pre><code>$ rails new chap2-3-1 -m ./app_template.rb
+</code></pre>
+
+<h4>３階層</h4>
+
+<pre><code>$ rails new chap2-3-1 -m ./app_template.rb
+</code></pre>
+
+<h1>参照</h1>
+
+<p><a href="http://www.amazon.co.jp/UML%E3%81%AB%E3%82%88%E3%82%8B%E4%B8%80%E6%B0%97%E9%80%9A%E8%B2%ABDB%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88-DB-Magazine-SELECTION-%E7%B4%B0%E5%B7%9D/dp/4798113425">UMLによる一気通貫DBシステム設計</a></p>
+
+<p><a href="http://www.amazon.co.jp/%E3%82%B0%E3%83%A9%E3%82%B9%E7%89%87%E6%89%8B%E3%81%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E8%A8%AD%E8%A8%88~%E8%B2%A9%E5%A3%B2%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E7%B7%A8-DBMagazine-SELECTION-%E6%A2%85%E7%94%B0-%E5%BC%98%E4%B9%8B/dp/479810566X">グラス片手にデータベース設計会計システム編</a></p>
+
+</body>
+</html>
