@@ -93,14 +93,14 @@
 
 + 日本語表示対応
 
-    + [モデルの日本語化](config/locales/model_ja.yml)
-    + [ビューの日本語化1](config/locales/view_ja.yml)
-    + [ビューの日本語化2](app/views/accounts/index.html.erb)
-    + [ビューの日本語化3](app/views/accounts/show.html.erb)
-    + [ビューの日本語化4](app/views/accounts/edit.html.erb)
-    + [ビューの日本語化5](app/views/accounts/new.html.erb)
+    + [モデルの日本語化](chap2-2-1/config/locales/model_ja.yml)
+    + [ビューの日本語化1](chap2-2-1/config/locales/view_ja.yml)
+    + [ビューの日本語化2](chap2-2-1/app/views/accounts/index.html.erb)
+    + [ビューの日本語化3](chap2-2-1/app/views/accounts/show.html.erb)
+    + [ビューの日本語化4](chap2-2-1/app/views/accounts/edit.html.erb)
+    + [ビューの日本語化5](chap2-2-1/app/views/accounts/new.html.erb)
 
-+ [シードファイルの作成](db/seeds.rb)
++ [シードファイルの作成](chap2-2-1/db/seeds.rb)
 
         $ rake db:seed
 
