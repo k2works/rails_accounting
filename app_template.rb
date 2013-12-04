@@ -84,3 +84,31 @@ generate "email_spec:steps"
 # Cucumberの実行
 
 # Cucumberシナリオ作成
+
+# Bootstrap適用
+gem 'sass-rails',   '~> 3.2.3'
+gem 'bootstrap-sass', '~> 3.0.2.0'
+
+run "rm app/assets/stylesheets/application.css"
+
+file 'app/assets/stylesheets/application.css.scss', <<-CODE
+@import "bootstrap";
+@import "bootstrap/theme";
+CODE
+
+inject_into_file 'app/assets/javascripts/application.js', after: "//= require_tree .\n" do <<-CODE
+// Loads all Bootstrap javascripts
+//= require bootstrap/affix
+//= require bootstrap/alert
+//= require bootstrap/button
+//= require bootstrap/carousel
+//= require bootstrap/collapse
+//= require bootstrap/dropdown
+//= require bootstrap/tab
+//= require bootstrap/transition
+//= require bootstrap/scrollspy
+//= require bootstrap/modal
+//= require bootstrap/tooltip
+//= require bootstrap/popover
+CODE
+end

@@ -77,31 +77,31 @@
     $ rvm use ruby-1.9.3-p392
     $ rvm gemset create rails_accounting
     $ rvm use ruby-1.9.3-p392@rails_accounting
-    $ gem i rails --version 3.2.13 --no-ri
+    $ bundle
 
 ### <a name="chap2-2">勘定科目 ###
 
 #### 財務/勘定一体型 ####
 
-    $ rails new chap2-2-1 -m ./bdd_template.rb
+    $ rails new chap2-2-1 -m ./app_template.rb
 
 #### 財務/勘定分離型 ####
 
-    $ rails new chap2-2-2 -m ./bdd_template.rb
+    $ rails new chap2-2-2 -m ./app_template.rb
 
 #### チルダ連結型 ####
 
-    $ rails new chap2-2-3 -m ./bdd_template.rb
+    $ rails new chap2-2-3 -m ./app_template.rb
 
 ### <a name="chap2-3">仕分 ###
 
 #### ２階層 ####
 
-    $ rails new chap2-3-1 -m ./bdd_template.rb
+    $ rails new chap2-3-1 -m ./app_template.rb
 
 #### ３階層 ####
 
-    $ rails new chap2-3-1 -m ./bdd_template.rb
+    $ rails new chap2-3-1 -m ./app_template.rb
 
 # 参照 #
 [UMLによる一気通貫DBシステム設計](http://www.amazon.co.jp/UML%E3%81%AB%E3%82%88%E3%82%8B%E4%B8%80%E6%B0%97%E9%80%9A%E8%B2%ABDB%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88-DB-Magazine-SELECTION-%E7%B4%B0%E5%B7%9D/dp/4798113425)
