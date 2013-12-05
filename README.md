@@ -104,6 +104,11 @@
 
         $ rake db:seed
 
++ モデルに再帰リレーションを追加
+
+        belongs_to :account
+        has_many :account
+
 
 ##### Cucumberで始める #####
 

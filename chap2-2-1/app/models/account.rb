@@ -6,4 +6,6 @@ class Account < ActiveRecord::Base
     :name,
     :parent_code
     )
+  belongs_to :account
+  has_many :account
 end

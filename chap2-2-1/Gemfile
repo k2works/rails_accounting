@@ -52,3 +52,5 @@ end
 gem "sass-rails", "~> 3.2.3"
 gem "bootstrap-sass", "~> 3.0.2.0"
 gem "i18n_generators"
+
+gem "rails-erd"
