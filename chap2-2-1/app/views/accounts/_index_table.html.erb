@@ -1,13 +1,13 @@
 <table class="table table-hover">
   <tr>
-    <th><%= t('activerecord.attributes.account.bs_pl_division') %></th>
-    <th><%= t('activerecord.attributes.account.debit_credit_division') %></th>
-    <th><%= t('activerecord.attributes.account.code') %></th>
-    <th><%= t('activerecord.attributes.account.name') %></th>
-    <th><%= t('activerecord.attributes.account.parent_code') %></th>
-    <th><%= t('activerecord.attributes.account.name') %></th>
-    <th><%= t('activerecord.attributes.account.parent_code') %></th>
-    <th><%= t('activerecord.attributes.account.name') %></th>        
+    <th><%= sort_link(@search,:bs_pl_division,t('activerecord.attributes.account.bs_pl_division')) %></th>
+    <th><%= sort_link(@search,:debit_credit_division,t('activerecord.attributes.account.debit_credit_division')) %></th>
+    <th><%= sort_link(@search,:code,t('activerecord.attributes.account.code')) %></th>
+    <th><%= sort_link(@search,:name,t('activerecord.attributes.account.name')) %></th>
+    <th><%= sort_link(@search,:parent_code,t('activerecord.attributes.account.parent_code')) %></th>
+    <th><%= sort_link(@search,:name,t('activerecord.attributes.account.name')) %></th>
+    <th><%= sort_link(@search,:parent_code,t('activerecord.attributes.account.parent_code')) %></th>
+    <th><%= sort_link(@search,:name,t('activerecord.attributes.account.name')) %></th>        
     <th></th>
     <th></th>
     <th></th>
