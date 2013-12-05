@@ -16,3 +16,4 @@ gem 'sass-rails',   '~> 3.2.3'
 gem 'bootstrap-sass', '~> 3.0.2.0'
 
 gem 'kaminari'
+gem 'ransack'

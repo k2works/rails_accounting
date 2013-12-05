@@ -56,3 +56,4 @@ gem "i18n_generators"
 gem "rails-erd"
 
 gem 'kaminari'
+gem 'ransack'

@@ -2,7 +2,8 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.order('code').page(params[:page]).per(3)
+    @search = Account.search(params[:q])
+    @accounts = @search.result.order('code').page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

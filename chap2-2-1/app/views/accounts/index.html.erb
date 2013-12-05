@@ -1,9 +1,17 @@
 <div class="panel panel-primary">
   <div class="panel-heading"><h1><%= t('.title') %></h1></div>  
   <div class="panel-body">
-    <div class="table-responsive">
-      <%= render 'index_table', account: @accounts, show: t('.show'), edit: t('.edit'), destroy: t('.destroy'), ok: t('.ok') %>
-    </div>    
+    <div class="row">
+      <%= render 'index_form', search: @search, search: t('.search') %>
+    </div>
+    <div class="row">
+      <div class="col-md-12"><br></div>
+    </div>
+    <div class="row">    
+      <div class="table-responsive">
+        <%= render 'index_table', account: @accounts, show: t('.show'), edit: t('.edit'), destroy: t('.destroy'), ok: t('.ok') %>
+      </div>
+    </div>
   </div>
   <div class="panel-footer"></div>  
 </div>

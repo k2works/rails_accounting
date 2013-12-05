@@ -135,6 +135,8 @@
 
 + [日本語化](chap2-2-1/config/locales/kaminari_ja.yml)
 
++ 検索機能追加
+
 ##### Cucumberで始める #####
 
 1. １つのシナリオに焦点をあわせる
@@ -179,3 +181,5 @@
 [bootstrapでKaminariを使ってpaginateする](http://qiita.com/miyakou1982/items/bec13691cb6533329394)
 
 [ささっと Rails4 + Bootstrap3 + kaminari でゲストブック作成してみるメモAdd Star](http://d.hatena.ne.jp/CortYuming/20131027/p1)
+
+[activerecord-hackery / ransack](https://github.com/activerecord-hackery/ransack)

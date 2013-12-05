@@ -15,6 +15,7 @@ ja:
       destroy:  "削除"
       ok:      "本当によろしいですか？"
       new:     "新規"
+      search:  "検索"
     edit:
       title:    "編集"
       show:     "表示"

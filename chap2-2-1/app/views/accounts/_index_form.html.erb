@@ -1,0 +1,25 @@
+<%= search_form_for(@search,html:{class: "form-inline", role: "form"}) do |f| %>
+  <div class="form-group">
+    <%= f.label :bs_pl_division,{class: "sr-only"} %>
+    <%= f.select :bs_pl_division_cont,['BS','PL'],{include_blank: 'BS/PL'},{class: "form-control"} %>
+  </div>
+  <div class="form-group">      
+    <%= f.label :debit_credit_division,{class: "sr-only"} %>
+    <%= f.select :debit_credit_division_cont,['借方','貸方'],{include_blank: '借方/貸方'},{class: "form-control"} %>
+  </div>
+  <div class="form-group">      
+    <%= f.label :code,{class: "sr-only"} %>
+    <%= f.text_field :code_cont,{class: "form-control", placeholder: "勘定科目コード"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :name,{class: "sr-only"} %>
+    <%= f.text_field :name_cont,{class: "form-control", placeholder: "勘定科目名"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :parent_code,{class: "sr-only"} %>      
+    <%= f.collection_select :parent_code_cont, Account.all,:code,:name,{include_blank: '親勘定科目コード'},{class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.submit search, class: 'btn btn-primary' %>
+  </div>
+<% end %>
