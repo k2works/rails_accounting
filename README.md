@@ -109,6 +109,12 @@
         belongs_to :account
         has_many :account
 
++ [navbarを追加する](chap2-2-1/app/views/layouts/_navbar.html.erb)
+
++ [navbarを共通で読み込めるようにする](chap2-2-1/app/views/layouts/application.html.erb)
+
+        <%= render 'layouts/navbar' %>
+
 
 ##### Cucumberで始める #####
 

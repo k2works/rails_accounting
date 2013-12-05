@@ -1,4 +1,9 @@
 ja:
+  layouts:
+    application:
+      title:    "勘定科目マスタ"
+    navbar:
+      home:     "ホーム"
   accounts:
     form:
       title:    "勘定科目"
@@ -18,6 +23,7 @@ ja:
       title:    "新規"
       back:     "戻る"
     show:
+      title:    "明細"    
       edit:     "編集"      
       back:     "戻る"
                             

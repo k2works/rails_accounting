@@ -1,30 +1,56 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-primary">
+  <div class="panel-heading"><h1><%= t('.title') %></h1></div>  
+  <div class="panel-body">
+    
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="col-md-2">
+        <strong><%= t('activerecord.attributes.account.bs_pl_division') %>:</strong>
+      </div>
+      <div class="col-md-1">
+        <p><%= @account.bs_pl_division %></p>
+      </div>  
+    </div>
 
-<p>
-  <b><%= t('activerecord.attributes.account.bs_pl_division') %>:</b>
-  <%= @account.bs_pl_division %>
-</p>
+    <div class="row">
+      <div class="col-md-2">
+        <strong><%= t('activerecord.attributes.account.debit_credit_division') %>:</strong>
+      </div>
+      <div class="col-md-1">
+        <p><%= @account.debit_credit_division %></p>
+      </div>
+    </div>
 
-<p>
-  <b><%= t('activerecord.attributes.account.debit_credit_division') %>:</b>
-  <%= @account.debit_credit_division %>
-</p>
+    <div class="row">
+      <div class="col-md-2">
+        <strong><%= t('activerecord.attributes.account.code') %>:</strong>
+      </div>
+      <div class="col-md-1">
+        <p><%= @account.code %></p>
+      </div>
+    </div>
 
-<p>
-  <b><%= t('activerecord.attributes.account.code') %>:</b>
-  <%= @account.code %>
-</p>
+    <div class="row">
+      <div class="col-md-2">
+        <strong><%= t('activerecord.attributes.account.name') %>:</strong>
+      </div>
+      <div class="col-md-1">
+        <p><%= @account.name %></p>
+      </div>
+    </div>
 
-<p>
-  <b><%= t('activerecord.attributes.account.name') %>:</b>
-  <%= @account.name %>
-</p>
+    <div class="row">
+      <div class="col-md-2">
+        <strong><%= t('activerecord.attributes.account.parent_code') %>:</strong>
+      </div>
+      <div class="col-md-1">
+        <p><%= @account.parent_code %></p>
+      </div>
+    </div>
 
-<p>
-  <b><%= t('activerecord.attributes.account.parent_code') %>:</b>
-  <%= @account.parent_code %>
-</p>
+  </div>
+  <div class="panel-footer"></div>
+</div>
 
-
-<%= link_to t('.edit'), edit_account_path(@account) %> |
-<%= link_to t('.back'), accounts_path %>
+<%= link_to t('.edit'), edit_account_path(@account), class: "btn btn-primary active",role: "button" %> |
+<%= link_to t('.back'), accounts_path ,class: "btn btn-primary active",role: "button" %>

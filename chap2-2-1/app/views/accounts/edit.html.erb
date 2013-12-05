@@ -1,6 +1,10 @@
-<h1><%= t('.title') %></h1>
+<div class="panel panel-primary">
+  <div class="panel-heading"><h1><%= t('.title') %></h1></div>  
+  <div class="panel-body">
+    <%= render 'form' %>    
+  </div>
+  <div class="panel-footer"></div>  
+</div>
 
-<%= render 'form' %>
-
-<%= link_to t('.show'), @account %> |
-<%= link_to t('.back'), accounts_path %>
+<%= link_to t('.show'), @account, class: "btn btn-primary active",role: "button"  %> |
+<%= link_to t('.back'), accounts_path, class: "btn btn-primary active",role: "button"  %>

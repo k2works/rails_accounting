@@ -1,7 +1,7 @@
-<%= form_for(@account) do |f| %>
+<%= form_for(@account,html:{class: "form-horizontal",role: "form"}) do |f| %>
   <% if @account.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
+      <h2><%= @account.errors.count %> <%= t('.error') %>:</h2>
 
       <ul>
       <% @account.errors.full_messages.each do |msg| %>
@@ -11,27 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :bs_pl_division %><br />
-    <%= f.select :bs_pl_division,['BS','PL'],{include_blank: '選択してください'} %>
+  <div class="form-group">
+    <%= f.label :bs_pl_division,{class: "col-sm-2 control-label"} %><br />
+    <div class="col-md-2">
+      <%= f.select :bs_pl_division,['BS','PL'],{include_blank: '選択してください'},{class: "form-control"} %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :debit_credit_division %><br />
-    <%= f.select :debit_credit_division,['借方','貸方'],{include_blank: '選択してください'} %>
+  <div class="form-group">
+    <%= f.label :debit_credit_division,{class: "col-sm-2 control-label"} %><br />
+    <div class="col-md-2">    
+      <%= f.select :debit_credit_division,['借方','貸方'],{include_blank: '選択してください'},{class: "form-control"} %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :code %><br />
-    <%= f.text_field :code %>
+  <div class="form-group">
+    <%= f.label :code,{class: "col-sm-2 control-label"} %><br />
+    <div class="col-md-5">
+      <%= f.text_field :code,{class: "form-control", placeholder: "Text input"} %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name,{class: "col-sm-2 control-label"} %><br />
+    <div class="col-md-5">
+      <%= f.text_field :name,{class: "form-control", placeholder: "Text input"} %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :parent_code %><br />
-    <%= f.collection_select :parent_code, Account.all,:code,:name,{include_blank: '選択してください'} %>
+  <div class="form-group">
+    <%= f.label :parent_code,{class: "col-sm-2 control-label"} %><br />
+    <div class="col-md-2">    
+      <%= f.collection_select :parent_code, Account.all,:code,:name,{include_blank: '選択してください'},{class: "form-control"} %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
