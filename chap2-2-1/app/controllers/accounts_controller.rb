@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
+    @accounts = Account.order('code').page(params[:page]).per(3)
 
     respond_to do |format|
       format.html # index.html.erb

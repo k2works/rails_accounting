@@ -54,3 +54,5 @@ gem "bootstrap-sass", "~> 3.0.2.0"
 gem "i18n_generators"
 
 gem "rails-erd"
+
+gem 'kaminari'

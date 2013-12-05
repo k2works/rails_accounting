@@ -118,6 +118,9 @@ gsub_file 'config/application.rb', '# config.i18n.default_locale = :de', 'config
 
 gem 'i18n_generators'
 
+# ページング
+gem 'kaminari'
+
 # アプリケーションセットアップ
 #generate(:scaffold, "account", "bs_pl_division:string", "debit_credit_division:string", "code:string","name:string","parent_code:string")
 

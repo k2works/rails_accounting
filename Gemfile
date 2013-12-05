@@ -14,3 +14,5 @@ gem "email_spec"
 
 gem 'sass-rails',   '~> 3.2.3'
 gem 'bootstrap-sass', '~> 3.0.2.0'
+
+gem 'kaminari'

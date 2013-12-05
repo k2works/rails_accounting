@@ -115,6 +115,25 @@
 
         <%= render 'layouts/navbar' %>
 
++ ページング対応
+
+        $ rails g kaminari:config
+        $ rails g kaminari:views bootstrap
+
++ [Bootstrap3に対応するように修正](chap2-2-1/app/views/kaminari/_paginator.html.erb)
+
+        <div>
+            <ul class="pagination">
+
++ [ビュー修正](chap2-2-1/app/views/accounts/index.html.erb)
+
+        <%= paginate @accounts %>
+
++ [コントローラー修正](chap2-2-1/app/controllers/accounts_controller.rb)
+
+        @accounts = Account.order('code').page(params[:page]).per(3)
+
++ [日本語化](chap2-2-1/config/locales/kaminari_ja.yml)
 
 ##### Cucumberで始める #####
 
@@ -156,3 +175,7 @@
 [UMLによる一気通貫DBシステム設計](http://www.amazon.co.jp/UML%E3%81%AB%E3%82%88%E3%82%8B%E4%B8%80%E6%B0%97%E9%80%9A%E8%B2%ABDB%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88-DB-Magazine-SELECTION-%E7%B4%B0%E5%B7%9D/dp/4798113425)
 
 [グラス片手にデータベース設計会計システム編](http://www.amazon.co.jp/%E3%82%B0%E3%83%A9%E3%82%B9%E7%89%87%E6%89%8B%E3%81%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E8%A8%AD%E8%A8%88~%E8%B2%A9%E5%A3%B2%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E7%B7%A8-DBMagazine-SELECTION-%E6%A2%85%E7%94%B0-%E5%BC%98%E4%B9%8B/dp/479810566X)
+
+[bootstrapでKaminariを使ってpaginateする](http://qiita.com/miyakou1982/items/bec13691cb6533329394)
+
+[ささっと Rails4 + Bootstrap3 + kaminari でゲストブック作成してみるメモAdd Star](http://d.hatena.ne.jp/CortYuming/20131027/p1)
