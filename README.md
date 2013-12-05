@@ -135,7 +135,18 @@
 
 + [日本語化](chap2-2-1/config/locales/kaminari_ja.yml)
 
-+ 検索機能追加
++ [検索機能追加](chap2-2-1/app/views/accounts/_index_form.html.erb)
+
++ [検索機能追加](chap2-2-1/app/views/accounts/index.html.erb)
+
+        <div class="row">
+            <%= render 'index_form', search: @search, search: t('.search') %>
+        </div>
+
++ [検索機能追加](chap2-2-1/app/controllers/accounts_controller.rb)
+
+        @search = Account.search(params[:q])
+        @accounts = @search.result.order('code').page(params[:page])
 
 ##### Cucumberで始める #####
 

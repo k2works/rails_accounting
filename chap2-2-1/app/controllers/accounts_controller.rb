@@ -4,7 +4,6 @@ class AccountsController < ApplicationController
   def index
     @search = Account.search(params[:q])
     @accounts = @search.result.order('code').page(params[:page])
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @accounts }
