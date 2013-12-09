@@ -7,6 +7,7 @@ class AccountsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @accounts }
+      format.csv { send_data @accounts.to_csv }
     end
   end
 

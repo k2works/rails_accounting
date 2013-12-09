@@ -148,6 +148,16 @@
         @search = Account.search(params[:q])
         @accounts = @search.result.order('code').page(params[:page])
 
++ CSVでエクスポート出来るようにする
+
+    1. [csvライブラリを読み込む用にする](chap2-2-1/config/application.rb)
+
+    1. [コントローラを修正](chap2-2-1/app/controllers/accounts_controller.rb)
+
+    1. [モデルにcsvメソッド追加](chap2-2-1/app/models/account.rb)
+
+    1. [ビユーを修正](chap2-2-1/app/views/accounts/index.html.erb)
+
 ##### Cucumberで始める #####
 
 1. １つのシナリオに焦点をあわせる

@@ -15,5 +15,15 @@ class Account < ActiveRecord::Base
     :code,
     :name
     )
-  
+
+  def self.to_csv
+    csv_data = CSV.generate do |csv|
+      csv << column_names
+      all.each do |account|
+        csv << account.attributes.values_at(*column_names)
+      end
+    end
+
+    csv_data = csv_data.tosjis
+  end
 end
