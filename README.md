@@ -158,6 +158,17 @@
 
     1. [ビユーを修正](chap2-2-1/app/views/accounts/index.html.erb)
 
++ Excelでエクスポート出来るようにする
+
+    1. [Mimeタイプ追加](chap2-2-1/config/initializers/mime_types.rb)
+
+    1. [コントローラを修正](chap2-2-1/app/controllers/accounts_controller.rb)
+
+    1. [モデルを修正](chap2-2-1/app/models/account.rb)
+
+    1. [ビユーを追加](chap2-2-1/app/views/accounts/index.xls.erb)
+
+
 ##### Cucumberで始める #####
 
 1. １つのシナリオに焦点をあわせる
@@ -204,3 +215,5 @@
 [ささっと Rails4 + Bootstrap3 + kaminari でゲストブック作成してみるメモAdd Star](http://d.hatena.ne.jp/CortYuming/20131027/p1)
 
 [activerecord-hackery / ransack](https://github.com/activerecord-hackery/ransack)
+
+[Exporting CSV and Excel](http://railscasts.com/episodes/362-exporting-csv-and-excel?view=asciicast)

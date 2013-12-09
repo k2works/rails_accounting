@@ -8,6 +8,7 @@ class AccountsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @accounts }
       format.csv { send_data @accounts.to_csv }
+      format.xls
     end
   end
 

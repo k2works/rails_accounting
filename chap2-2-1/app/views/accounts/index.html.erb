@@ -2,7 +2,8 @@
   <div class="panel-heading"><h1><%= t('.title') %></h1>
   <p>
     <%= t('.download') %>:
-    <%= link_to "CSV", accounts_path(format: "csv"),class: "btn btn-primary btn-xs active",role: "button" %> |
+    <%= link_to "CSV", accounts_path(format: "csv"), class: "btn btn-primary btn-xs active",role: "button" %> |
+    <%= link_to "Excel(.xls)", accounts_path(format: "xls"), class: "btn btn-primary btn-xs active",role: "button" %>
   </p>
   </div>
   <div class="panel-body">
