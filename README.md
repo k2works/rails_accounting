@@ -168,6 +168,15 @@
 
     1. [ビユーを追加](chap2-2-1/app/views/accounts/index.xls.erb)
 
++ CSVでインポートできるようにする
+
+    1. [ビューを修正](chap2-2-1/app/views/accounts/index.html.erb)
+
+    1. [ルートファイルを編集](chap2-2-1/config/routes.rb)
+
+    1. [コントローラを修正](chap2-2-1/app/controllers/accounts_controller.rb)
+
+    1. [モデルを修正](chap2-2-1/app/models/account.rb)
 
 ##### Cucumberで始める #####
 

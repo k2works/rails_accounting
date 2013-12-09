@@ -57,3 +57,5 @@ gem "rails-erd"
 
 gem 'kaminari'
 gem 'ransack'
+
+gem 'roo'

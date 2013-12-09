@@ -17,6 +17,7 @@ ja:
       new:     "新規"
       search:  "検索"
       download: "ダウンロード"
+      upload:   "アップロード"      
     edit:
       title:    "編集"
       show:     "表示"

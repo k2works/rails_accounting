@@ -7,9 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- Wrap all page content here -->
+<div id="wrap"> 
+  <%= render 'layouts/navbar' %>
+</div>
 
-<%= render 'layouts/navbar' %>
-<%= yield %>
+<!-- Begin page content -->
+<div class="container">
+  <% flash.each do |name, msg| %>
+    <p>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+    </p>
+  <% end %>
 
+  <%= yield %>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Place sticky footer content here.</p>
+  </div>
+</div>
+  
 </body>
 </html>

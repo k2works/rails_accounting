@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
@@ -81,5 +82,10 @@ class AccountsController < ApplicationController
       format.html { redirect_to accounts_url }
       format.json { head :no_content }
     end
+  end
+
+  def import
+    Account.import(params[:file])
+    redirect_to root_url, notice: "アップロード"
   end
 end

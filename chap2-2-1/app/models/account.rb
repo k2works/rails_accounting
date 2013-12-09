@@ -26,4 +26,17 @@ class Account < ActiveRecord::Base
 
     csv_data = csv_data.tosjis
   end
+
+  def self.import(file)
+    case File.extname(file.original_filename)
+      when '.csv' then
+      CSV.foreach(file.path, headers: true, encoding: "SJIS:UTF-8") do |row|
+        account = find_by_id(row["id"]) || new
+        account.attributes = row.to_hash.slice(*accessible_attributes)
+        account.save!
+      end
+    else raise "Unknown file type: #{file.original_filename}"
+    end
+  end
+
 end
